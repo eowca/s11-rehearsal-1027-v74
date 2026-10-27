@@ -22,5 +22,6 @@ else:
             self.end_headers()
             self.wfile.write(body)
 
+    server = http.server.HTTPServer(("0.0.0.0", int(os.environ.get("PORT", "8080"))), Handler)
     print("dummy.ready", flush=True)
-    http.server.HTTPServer(("0.0.0.0", int(os.environ.get("PORT", "8080"))), Handler).serve_forever()
+    server.serve_forever()
