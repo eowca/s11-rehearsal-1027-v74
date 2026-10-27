@@ -1,0 +1,5 @@
+FROM python:3.12-alpine
+RUN sleep 180
+WORKDIR /app
+COPY dummy.py .
+CMD ["python", "-u", "dummy.py", "resident"]
